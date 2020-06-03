@@ -84,11 +84,10 @@ function handleItemCheckClicked() {
 function removeId(item) {
   console.log('`removeItem` ran');
   for (let i = 0; i < STORE.length; i++) {
-    if (item == STORE[i].id) {
-      console.log(i);
-      STORE.splice(i, i+1);
-    };
-  };
+    if (item === STORE[i].id) {
+      STORE.splice(i, i + 1);
+    }
+  }
 }
 
 
