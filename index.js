@@ -81,11 +81,24 @@ function handleItemCheckClicked() {
   });
 }
 
+function removeId(item) {
+  console.log('`removeItem` ran');
+  for (let i = 0; i < STORE.length; i++) {
+    if (id === STORE[i].id) {
+      STORE.slice(i);
+    };
+  };
+}
+
 
 function handleDeleteItemClicked() {
   // this function will be responsible for when users want to delete a shopping list
   // item
-  console.log('`handleDeleteItemClicked` ran')
+  $('.js-shopping-list').on('click', `.js-item-delete`, event => {
+    console.log('`handleDeleteItemClicked` ran');
+    const id = getItemIdFromElement(event.currentTarget);
+    removeId(id);
+  });
 }
 
 // this function will be our callback when the page loads. it's responsible for
